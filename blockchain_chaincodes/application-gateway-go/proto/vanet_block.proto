@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = "github.com/Adityak9/fabric-samples/asset-transfer-basic/application-gateway-go/proto";
+package vanet_block;
+
+message block_data{
+    string vin = 1;
+    string pid = 2;
+    string pk = 3;
+    string status = 4;
+}
+
+message response{
+    int32 status = 1;
+}
+
+message psuedoid{
+    string pid = 1;
+}
+
+service BlockchainVanet{
+    rpc reg_vehicle (block_data) returns (response);
+    rpc update_pid (block_data)  returns (response);
+    rpc qurery_Block (psuedoid) returns (block_data);
+}
