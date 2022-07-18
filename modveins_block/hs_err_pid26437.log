@@ -1,0 +1,148 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f430f86e876, pid=26437, tid=1673
+#
+# JRE version: OpenJDK Runtime Environment (15.0.2+7) (build 15.0.2+7-27)
+# Java VM: OpenJDK 64-Bit Server VM (15.0.2+7-27, mixed mode, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libc.so.6+0x46876]
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: --add-modules=ALL-SYSTEM -Xmx1024m -Dosgi.instance.area.default=/home/aditya/omnetpp-5.7/bin/../ide/../samples /home/aditya/omnetpp-5.7/ide//plugins/org.eclipse.equinox.launcher_1.6.300.v20210813-1054.jar -os linux -ws gtk -arch x86_64 -showsplash -launcher /home/aditya/omnetpp-5.7/ide/omnetpp -name OMNeT++ IDE --launcher.library /home/aditya/omnetpp-5.7/ide//plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.2.300.v20210828-0802/eclipse_11506.so -startup /home/aditya/omnetpp-5.7/ide//plugins/org.eclipse.equinox.launcher_1.6.300.v20210813-1054.jar --launcher.appendVmargs -exitdata 2 -vm /home/aditya/omnetpp-5.7/ide//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.stripped.linux.x86_64_15.0.2.v20210201-0955/jre/bin/java -vmargs --add-modules=ALL-SYSTEM -Xmx1024m -Dosgi.instance.area.default=/home/aditya/omnetpp-5.7/bin/../ide/../samples -jar /home/aditya/omnetpp-5.7/ide//plugins/org.eclipse.equinox.launcher_1.6.300.v20210813-1054.jar
+
+Host: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz, 8 cores, 18G, Ubuntu 20.04.4 LTS
+Time: Sat Jul  2 15:33:42 2022 IST elapsed time: 39540.590828 seconds (0d 10h 59m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f430bd6e100):  JavaThread "AWT-XAWT" daemon [_thread_in_native, id=1673, stack(0x00007f42e51fa000,0x00007f42e52fb000)]
+
+Stack: [0x00007f42e51fa000,0x00007f42e52fb000],  sp=0x00007f42e52f9810,  free space=1022k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libc.so.6+0x46876]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 34719  sun.awt.X11.XlibWrapper.XEventsQueued(JI)I java.desktop@15.0.2 (0 bytes) @ 0x00007f42ff6570e4 [0x00007f42ff6570a0+0x0000000000000044]
+j  sun.awt.X11.XToolkit.run(Z)V+63 java.desktop@15.0.2
+j  sun.awt.X11.XToolkit.run()V+5 java.desktop@15.0.2
+j  java.lang.Thread.run()V+11 java.base@15.0.2
+v  ~StubRoutines::call_stub
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 128 (SI_KERNEL), si_addr: 0x0000000000000000
+
+Register to memory mapping:
+
+RAX=0x001067a42531daf0 is an unknown value
+RBX=0x00007f430fa14718: <offset 0x00000000001ec718> in /lib/x86_64-linux-gnu/libc.so.6 at 0x00007f430f828000
+RCX=0x0000000000000001 is an unknown value
+RDX=0x0000000000000001 is an unknown value
+RSP=0x00007f42e52f9810 is pointing into the stack for thread: 0x00007f430bd6e100
+RBP=0x0000000000000001 is an unknown value
+RSI=0x0000000000000001 is an unknown value
+RDI=0x00007f4234916bc0: <offset 0x00000000005f3bc0> in /home/aditya/omnetpp-5.7/ide/plugins/org.omnetpp.ide.nativelibs.linux.x86_64_5.7.0.211004-1d27e5f35e/libopplibs.so at 0x00007f4234323000
+R8 =0x0 is NULL
+R9 =0x00007f4308d9980f points into unknown readable memory: 00
+R10=0x00007f41e6de9850: Java_sun_awt_X11_XlibWrapper_XEventsQueued+0x0000000000000000 in /home/aditya/omnetpp-5.7/ide/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.stripped.linux.x86_64_15.0.2.v20210201-0955/jre/lib/libawt_xawt.so at 0x00007f41e6dbd000
+R11=0x0 is NULL
+R12=0x0 is NULL
+R13=0x00000000000000c8 is an unknown value
+R14=0x00007f430fa192e8: <offset 0x00000000001f12e8> in /lib/x86_64-linux-gnu/libc.so.6 at 0x00007f430f828000
+R15=0x00007f4309fed910 points into unknown readable memory: 0x00007f430a813280 | 80 32 81 0a 43 7f 00 00
+
+
+Registers:
+RAX=0x001067a42531daf0, RBX=0x00007f430fa14718, RCX=0x0000000000000001, RDX=0x0000000000000001
+RSP=0x00007f42e52f9810, RBP=0x0000000000000001, RSI=0x0000000000000001, RDI=0x00007f4234916bc0
+R8 =0x0000000000000000, R9 =0x00007f4308d9980f, R10=0x00007f41e6de9850, R11=0x0000000000000000
+R12=0x0000000000000000, R13=0x00000000000000c8, R14=0x00007f430fa192e8, R15=0x00007f4309fed910
+RIP=0x00007f430f86e876, EFLAGS=0x0000000000010206, CSGSFS=0x002b000000000033, ERR=0x0000000000000000
+  TRAPNO=0x000000000000000d
+
+Top of Stack: (sp=0x00007f42e52f9810)
+0x00007f42e52f9810:   00007f430bd6dbf0 00000001e46bb56e
+0x00007f42e52f9820:   00007f42e52f9850 00007f41e6feb680
+0x00007f42e52f9830:   00007f430ba77a00 0000000000000001
+0x00007f42e52f9840:   0000000000000000 00007f42e52f98e0 
+
+Instructions: (pc=0x00007f430f86e876)
+0x00007f430f86e776:   de 04 00 e9 53 ff ff ff 66 90 f3 0f 1e fa 48 8b
+0x00007f430f86e786:   05 95 56 1a 00 8b 00 85 c0 75 0f e9 0a f7 ff ff
+0x00007f430f86e796:   66 2e 0f 1f 84 00 00 00 00 00 31 c0 c3 66 2e 0f
+0x00007f430f86e7a6:   1f 84 00 00 00 00 00 0f 1f 00 f3 0f 1e fa 41 57
+0x00007f430f86e7b6:   41 56 41 55 41 54 55 89 fd 53 48 89 f3 48 83 ec
+0x00007f430f86e7c6:   18 89 54 24 0c 84 c9 0f 85 35 02 00 00 4c 8d 35
+0x00007f430f86e7d6:   0e ab 1a 00 45 31 e4 0f 1f 00 64 8b 04 25 18 00
+0x00007f430f86e7e6:   00 00 ba 01 00 00 00 85 c0 0f 85 cd 01 00 00 41
+0x00007f430f86e7f6:   0f b1 16 4c 8b 3b 4d 85 ff 75 3b e9 62 01 00 00
+0x00007f430f86e806:   66 2e 0f 1f 84 00 00 00 00 00 48 83 fa 02 0f 84
+0x00007f430f86e816:   b6 00 00 00 64 8b 04 25 18 00 00 00 ba 01 00 00
+0x00007f430f86e826:   00 85 c0 0f 85 c1 00 00 00 41 0f b1 16 4c 39 2d
+0x00007f430f86e836:   a6 aa 1a 00 75 bd 49 8b 47 08 48 85 c0 0f 84 f7
+0x00007f430f86e846:   00 00 00 4c 8d 48 ff 4c 8b 2d 8c aa 1a 00 4d 89
+0x00007f430f86e856:   4f 08 64 8b 04 25 18 00 00 00 85 c0 0f 85 a8 00
+0x00007f430f86e866:   00 00 41 83 2e 01 4c 89 c8 48 c1 e0 05 4c 01 f8
+0x00007f430f86e876:   48 8b 50 10 48 83 fa 03 74 30 48 83 fa 04 75 8a
+0x00007f430f86e886:   48 8b 50 18 48 8b 78 20 48 c7 40 10 00 00 00 00
+0x00007f430f86e896:   89 ee 48 c1 ca 11 64 48 33 14 25 30 00 00 00 ff
+0x00007f430f86e8a6:   d2 e9 6e ff ff ff 0f 1f 40 00 48 8b 40 18 48 c1
+0x00007f430f86e8b6:   c8 11 64 48 33 04 25 30 00 00 00 ff d0 e9 52 ff
+0x00007f430f86e8c6:   ff ff 0f 1f 84 00 00 00 00 00 48 8b 50 18 48 8b
+0x00007f430f86e8d6:   70 20 89 ef 48 c1 ca 11 64 48 33 14 25 30 00 00
+0x00007f430f86e8e6:   00 ff d2 e9 2c ff ff ff 66 90 44 89 e0 f0 41 0f
+0x00007f430f86e8f6:   b1 16 0f 84 35 ff ff ff 4c 89 f7 e8 9a dc 04 00
+0x00007f430f86e906:   e9 28 ff ff ff 0f 1f 44 00 00 44 89 e0 41 87 06
+0x00007f430f86e916:   83 f8 01 0f 8e 4d ff ff ff 45 31 d2 ba 01 00 00
+0x00007f430f86e926:   00 be 81 00 00 00 4c 89 f7 b8 ca 00 00 00 0f 05
+0x00007f430f86e936:   e9 31 ff ff ff 0f 1f 44 00 00 49 8b 07 48 89 03
+0x00007f430f86e946:   48 85 c0 74 08 4c 89 ff e8 dd b9 fd ff 64 8b 04
+0x00007f430f86e956:   25 18 00 00 00 85 c0 75 7e 41 83 2e 01 e9 78 fe
+0x00007f430f86e966:   ff ff c6 05 1d 73 1a 00 01 64 8b 04 25 18 00 00 
+
+
+Stack slot to memory mapping:
+stack at sp + 0 slots: 0x00007f430bd6dbf0 points into unknown readable memory: 0x00007f430f759bc8 | c8 9b 75 0f 43 7f 00 00
+stack at sp + 1 slots: 0x00000001e46bb56e is an unknown value
+stack at sp + 2 slots: 0x00007f42e52f9850 is pointing into the stack for thread: 0x00007f430bd6e100
+stack at sp + 3 slots: {method} {0x00007f41e6feb680} 'XEventsQueued' '(JI)I' in 'sun/awt/X11/XlibWrapper'
+stack at sp + 4 slots: 0x00007f430ba77a00 points into unknown readable memory: 0x0000000000000000 | 00 00 00 00 00 00 00 00
+stack at sp + 5 slots: 0x0000000000000001 is an unknown value
+stack at sp + 6 slots: 0x0 is NULL
+stack at sp + 7 slots: 0x00007f42e52f98e0 is pointing into the stack for thread: 0x00007f430bd6e100
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007f41f8903be0, length=55, elements={
+0x00007f43080285d0, 0x00007f4308216360, 0x00007f4308217f10, 0x00007f430822e1f0,
+0x00007f430822f900, 0x00007f4308231230, 0x00007f4308232a60, 0x00007f4308234110,
+0x00007f43082cf270, 0x00007f430831f5e0, 0x00007f43088b2d20, 0x00007f4308909d10,
+0x00007f4308920cd0, 0x00007f427402d140, 0x00007f4274241860, 0x00007f427437e6e0,
+0x00007f430899a8c0, 0x00007f4308fb5c40, 0x00007f43092d4130, 0x00007f43096302a0,
+0x00007f422404f680, 0x00007f4224051100, 0x00007f42200246b0, 0x00007f4309e9c940,
+0x00007f4309971600, 0x00007f430ade1400, 0x00007f430a728c40, 0x00007f4309001330,
+0x00007f430a548ff0, 0x00007f430bd6e100, 0x00007f430bd91f30, 0x00007f4250396180,
+0x00007f42503aaa40, 0x00007f41f8176a60, 0x00007f41fc001780, 0x00007f4208002d50,
+0x00007f42503933c0, 0x00007f4208003e90, 0x00007f41fc00b500, 0x00007f42503ab0f0,
+0x00007f4250382cb0, 0x00007f4250382350, 0x00007f420800c390, 0x00007f41ec227030,
+0x00007f41fc0057d0, 0x00007f41fc0064a0, 0x00007f41fc0073c0, 0x00007f41fc0086e0,
+0x00007f421400c700, 0x00007f41ec27cbe0, 0x00007f41f8177be0, 0x00007f4270004770,
+0x00007f41f834f190, 0x00007f41ec040e70, 0x00007f41f83446a0
+}
+
+Java Threads: ( => current thread )
+  0x00007f43080285d0 JavaThread "main" [_thread_in_native, id=26438, stack(0x00007f430e434000,0x00007f430e535000)]
+  0x00007f4308216360 JavaThread "Reference Handler" daemon [_thread_blocked, id=26445, stack(0x00007f42f44f2000,0x00007f42f45f3000)]
+  0x00007f4308217f10 JavaThread "Finalizer" daemon [_thread_blocked, id=26446, stack(0x00007f42f43f1000,0x00007f42f44f2000)]
+  0x00007f430822e1f0 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=26447, stack(0x00007f42f400a000,0x00007f42f410b000)]
+  0x00007f430822f900 JavaThread "Service Thread"
